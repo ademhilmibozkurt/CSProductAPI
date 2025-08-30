@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using ProductAPI.Models;
+using ProductApi.Models;
 
-namespace ProductAPI.Data
+namespace ProductApi.Data
 {
     // Creating a object that inherit DbContext for database entity collection.
     public class AppDbContext: DbContext

@@ -1,4 +1,4 @@
-namespace ProductAPI.DTOs
+namespace ProductApi.DTOs
 {
     public class ProductDto
     {

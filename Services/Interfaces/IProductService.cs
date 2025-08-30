@@ -1,7 +1,7 @@
-using ProductAPI.DTOs;
-using ProductAPI.Models;
+using ProductApi.DTOs;
+using ProductApi.Models;
 
-namespace ProductAPI.Services.Interfaces
+namespace ProductApi.Services.Interfaces
 {
     // Interface for Product Service class.
     public interface IProductService

@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using ProductApi.DTOs;
 using ProductApi.Services.Interfaces;
 
-namespace ProductAPI.Controllers
+namespace ProductApi.Controllers
 {
     // routing
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : ControllersBase
+    public class ProductsController : ControllerBase
     {
         // Dependency Injection
         private readonly IProductService _service;

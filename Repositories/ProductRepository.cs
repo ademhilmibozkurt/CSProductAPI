@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using ProductAPI.Data;
-using ProductAPI.Models;
-using ProductAPI.Repositories.Interfaces;
+using ProductApi.Models;
+using ProductApi.Data;
+using ProductApi.Repositories.Interfaces;
+using System.ComponentModel;
 
-namespace ProductAPI.Repositories
+namespace ProductApi.Repositories
 {
 	// This class implements IProductRepositorry interface for repository operations.
 	public class ProductRepository : IProductRepository
@@ -12,7 +13,7 @@ namespace ProductAPI.Repositories
 		public ProductRepository(AppDbContext context) => _context = context;
 
 		public async Task<IEnumerable<Product>> GetAllAsync() => await _context.Products.ToListAsync();
-		public async Task<Product?> GetByIdAsync(int id) => await _context.Product.FindAsync(id);
+		public async Task<Product?> GetByIdAsync(int id) => await _context.Products.FindAsync(id);
 		
 		public async Task<Product> AddAsync(Product product)
 		{
@@ -20,7 +21,11 @@ namespace ProductAPI.Repositories
 			return product;
 		}
 
-		public async Task DeleteAsync(Product product) => _context.Products.Remove(product);
+		public Task DeleteAsync(Product product)
+		{
+			_context.Products.Remove(product);
+			return Task.CompletedTask;
+		}
 		public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
 	}
 }

@@ -1,16 +1,16 @@
-using ProductAPI.DTOs;
-using ProductAPI.Models;
-using ProductAPI.Repositories.Interfaces;
-using ProductAPI.Services.Interfaces;
+using ProductApi.DTOs;
+using ProductApi.Models;
+using ProductApi.Repositories.Interfaces;
+using ProductApi.Services.Interfaces;
 
-namespace ProductAPI.Services
+namespace ProductApi.Services
 {
     // ProductService implements IProductService interface
     public class ProductService : IProductService
     {
         // Dependency Injection using for outer objects not creating internally.
         private readonly IProductRepository _repo;
-        public ProductService(IProductService repo) => _repo = repo;
+        public ProductService(IProductRepository repo) => _repo = repo;
 
         public async Task<IEnumerable<Product>> GetAllAsync() => await _repo.GetAllAsync();
 
@@ -36,8 +36,9 @@ namespace ProductAPI.Services
             var product = await _repo.GetByIdAsync(id);
             if (product == null) return false;
             await _repo.DeleteAsync(product);
-            await _repo.SaveChanges();
+            await _repo.SaveChangesAsync();
             return true;
         }
+
     }
 }
