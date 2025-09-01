@@ -1,6 +1,6 @@
 ﻿# ProductApi Kurulum ve Çalıştırma Rehberi
 
-Bu rehber, **ProductApi** projesini başka bir bilgisayara taşıyıp çalıştırmak için gerekli adımları içerir. Proje, **ASP.NET Core Web API** ve **Entity Framework Core** ile geliştirilmiştir ve veritabanı olarak **MSSQL LocalDB** kullanır.
+Bu rehber, **ProductApi** projesini çalıştırmak için gerekli adımları içerir. Proje, **ASP.NET Core Web API** ve **Entity Framework Core** ile geliştirilmiştir ve veritabanı olarak **MSSQL LocalDB** kullanır.
 
 ---
 
